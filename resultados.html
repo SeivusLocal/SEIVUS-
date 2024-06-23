@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEIVUS - Resultados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ADFF2F; /* Cor de fundo conforme especificado */
+            color: #000000; /* Cor do texto */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+            background-color: #FFFFFF; /* Cor de fundo do cabeçalho */
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .content {
+            width: 80%;
+            max-width: 800px;
+            text-align: left;
+        }
+        .empresa {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #FFFFFF; /* Cor de fundo dos itens */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            opacity: 0; /* Começa invisível para a animação */
+            transition: opacity 0.5s ease; /* Transição suave */
+        }
+        .empresa.show {
+            opacity: 1; /* Torna visível quando a classe 'show' é adicionada */
+        }
+        .empresa img {
+            width: 80px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+        .empresa-info {
+            flex: 1;
+        }
+        .empresa-info h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .empresa-info p {
+            margin: 10px 0;
+        }
+        .empresa-info a {
+            text-decoration: none;
+            color: #4EC5DA; /* Cor do link */
+            font-weight: bold;
+        }
+        .animated-text {
+            font-size: 36px;
+            animation: fadeIn 1.5s forwards;
+            opacity: 0;
+            margin-bottom: 20px;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="animated-text">Resultados</div>
+    </header>
+    <div class="content">
+        <!-- Lista de empresas na categoria selecionada -->
+        <div id="categoria-selecionada">
+            <!-- Exemplo de empresa fictícia (SEIVUS Store) -->
+            <div class="empresa"></div> <!-- Placeholder para a primeira miniatura -->
+            <div class="empresa"></div> <!-- Placeholder para a segunda miniatura -->
+        </div>
+    </div>
+
+    <script>
+        // Função para adicionar as miniaturas após a animação da palavra "Resultados"
+        document.addEventListener('DOMContentLoaded', function() {
+            var categoriaSelecionada = document.getElementById('categoria-selecionada');
+            var animatedText = document.querySelector('.animated-text');
+
+            // Função para adicionar empresa (miniatura) com atraso
+            function addEmpresa(delay) {
+                setTimeout(function() {
+                    var miniatura = `
+                        <div class="empresa">
+                            <img src="https://i.postimg.cc/8sT80QX5/SEIVUS-20240613-121628-0000.png" alt="Logotipo SEIVUS Store">
+                            <div class="empresa-info">
+                                <h3>SEIVUS Store</h3>
+                                <p>Os melhores produtos sustentáveis do Brasil em um só lugar.</p>
+                                <a href="seivus.html">Ver mais</a>
+                            </div>
+                        </div>
+                    `;
+                    categoriaSelecionada.innerHTML += miniatura;
+                    var empresas = document.querySelectorAll('.empresa');
+                    empresas[empresas.length - 1].classList.add('show'); // Adiciona classe 'show' para exibir
+                }, delay);
+            }
+
+            // Inicia a animação da palavra "Resultados" e adiciona miniaturas com atrasos
+            animatedText.addEventListener('animationend', function() {
+                addEmpresa(0); // Adiciona a primeira miniatura imediatamente após a animação
+                addEmpresa(500); // Adiciona a segunda miniatura com atraso de 0.5 segundos
+            });
+        });
+    </script>
+</body>
+</html>

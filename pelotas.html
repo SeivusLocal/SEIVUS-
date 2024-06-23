@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empresas de Pelotas</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+    body {
+      text-align: center;
+      background-color: #FAFAD2; /* Background conforme especificado */
+      color: #000000; /* Cor do texto */
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      font-size: 32px;
+      padding-top: 20vh; /* Ajuste conforme necessário */
+      height: 100vh;
+      overflow: hidden;
+      margin: 0; /* Removendo margem padrão */
+    }
+
+    .animation-container {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typewriter 2s steps(40) forwards; /* Animação da frase */
+    }
+
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Layout em 2 colunas */
+      gap: 10px; /* Espaçamento entre os botões */
+      margin-top: 50px;
+      opacity: 0; /* Inicialmente invisível */
+      animation: showButtons 3s 2s forwards; /* Animação para mostrar os botões */
+    }
+
+    @keyframes showButtons {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .button-container button {
+      padding: 10px 16px; /* Tamanho do padding interno */
+      font-size: 14px; /* Tamanho da fonte */
+      cursor: pointer;
+      border-radius: 5px;
+      border: 2px solid transparent; /* Borda transparente */
+    }
+
+    /* Cores específicas para cada botão */
+    .button-lojas-naturais {
+      background-color: #9ACD32; /* Verde claro */
+      color: #FFFFFF;
+    }
+
+    .button-brecho {
+      background-color: #7CFC00; /* Verde limão */
+      color: #000000;
+    }
+
+    .button-venda-usados {
+      background-color: #32CD32; /* Verde puro */
+      color: #000000;
+    }
+
+    .button-hortifruti {
+      background-color: #228B22; /* Verde floresta */
+      color: #FFFFFF;
+    }
+
+    .button-restaurante-vegano {
+      background-color: #6B8E23; /* Verde oliva */
+      color: #FFFFFF;
+    }
+
+    .button-ecoturismo {
+      background-color: #556B2F; /* Verde musgo */
+      color: #FFFFFF;
+    }
+
+    .button-limpeza-sustentavel {
+      background-color: #8FBC8F; /* Verde mar */
+      color: #000000;
+    }
+
+    .button-floriculturas {
+      background-color: #2E8B57; /* Verde marinho */
+      color: #000000;
+    }
+
+    .button-loja-jardim {
+      background-color: #3CB371; /* Verde médio */
+      color: #FFFFFF;
+    }
+
+    .button-bicicletas {
+      background-color: #98FB98; /* Verde claro pastel */
+      color: #000000;
+    }
+
+    /* Efeitos de hover e active para os botões */
+    .button-container button:hover {
+      opacity: 0.8;
+    }
+
+    .button-container button:active {
+      transform: translateY(2px);
+    }
+
+    p {
+      font-size: 12px;
+      color: #999;
+      margin-top: 150px;
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div>O que você precisa hoje?</div>
+  </div>
+
+  <div class="button-container">
+    <button class="button-lojas-naturais" onclick="window.location.href='resultados.html'">Lojas de produtos naturais</button>
+    <button class="button-brecho" onclick="window.location.href='resultados.html'">Brechó</button>
+    <button class="button-venda-usados" onclick="window.location.href='resultados.html'">Venda de usados</button>
+    <button class="button-hortifruti" onclick="window.location.href='resultados.html'">Hortifruti</button>
+    <button class="button-restaurante-vegano" onclick="window.location.href='resultados.html'">Restaurante vegano e vegetariano</button>
+    <button class="button-ecoturismo" onclick="window.location.href='resultados.html'">Ecoturismo</button>
+    <button class="button-limpeza-sustentavel" onclick="window.location.href='resultados.html'">Limpeza sustentável</button>
+    <button class="button-floriculturas" onclick="window.location.href='resultados.html'">Floriculturas</button>
+    <button class="button-loja-jardim" onclick="window.location.href='resultados.html'">Loja para jardim</button>
+    <button class="button-bicicletas" onclick="window.location.href='resultados.html'">Bicicletas</button>
+  </div>
+
+  <p>seivus, significa "Save us" = "Salve-nos"</p>
+</body>
+</html>

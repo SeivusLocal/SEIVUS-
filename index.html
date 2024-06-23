@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Link and Button</title>
+  <style>
+    /* CSS do primeiro exemplo */
+    @keyframes tipsy {
+      0% {
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+      }
+      100% {
+        transform: translateX(-50%) translateY(-50%) rotate(360deg);
+      }
+    }
+
+    body {
+      font-family: helvetica, arial, sans-serif;
+      background-color: #2e2e31;
+      text-align: center; /* Para centralizar os elementos horizontalmente */
+      height: 100vh; /* Definir altura total da tela para posicionar no rodapé */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; /* Centralizar horizontalmente */
+    }
+
+    a {
+      color: #fffbf1;
+      text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
+      font-size: 80px;
+      font-weight: bold;
+      text-decoration: none;
+      letter-spacing: -3px;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px; /* Espaço abaixo do link "seivus" */
+    }
+
+    a:before,
+    a:after {
+      content: '';
+      padding: .9em .4em;
+      position: absolute;
+      left: 50%;
+      width: 100%;
+      top: 50%;
+      display: block;
+      border: 15px solid red;
+      transform: translateX(-50%) translateY(-50%) rotate(0deg);
+      animation: 10s infinite alternate ease-in-out tipsy;
+      z-index: -1; /* Colocar atrás do botão */
+    }
+
+    a:before {
+      border-color: #ADFF2F #ADFF2F rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    }
+
+    a:after {
+      border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #ADFF2F #ADFF2F;
+      box-shadow: 25px 25px 25px rgba(46, 46, 49, .8);
+    }
+
+    /* CSS do segundo exemplo */
+    .portfolio-experiment {
+      background: #2d2d2d;
+      margin-top: 50px; /* Espaço acima do botão */
+      position: relative; /* Adicionado para posicionamento absoluto dos elementos abaixo */
+    }
+
+    .portfolio-experiment a {
+      color: white;
+      padding: 15px 30px; /* Tamanho do botão ajustado */
+      display: flex; /* Utilizando flexbox para alinhar verticalmente */
+      justify-content: center; /* Centralizar horizontalmente */
+      align-items: center; /* Centralizar verticalmente */
+      border: 2px solid transparent; /* Espessura da borda ajustada */
+      position: relative;
+      font-size: 1.5em; /* Tamanho da fonte ajustado */
+      cursor: pointer;
+      letter-spacing: 0.07em; /* Espaçamento das letras ajustado */
+      text-decoration: none;
+      overflow: hidden;
+      z-index: 1; /* Garantir que o botão esteja na frente do retângulo */
+    }
+
+    .portfolio-experiment .text {
+      font-family: proxima-nova, monospace;
+      display: block;
+      transition: transform 0.4s cubic-bezier(.2, 0, 0, 1) 0.4s;
+    }
+
+    .portfolio-experiment a:after {
+      position: absolute;
+      content: '';
+      bottom: -3px; /* Posição da linha ajustada */
+      left: calc(0.7em * 1.2); /* Espaçamento lateral ajustado */
+      right: calc(0.7em * 1.2); /* Espaçamento lateral ajustado */
+      height: 3px; /* Tamanho da linha ajustado */
+      background: #f26522;
+      transition: transform 0.8s cubic-bezier(1, 0, .37, 1) 0.2s, right 0.2s cubic-bezier(.04, .48, 0, 1) 0.6s, left 0.4s cubic-bezier(.04, .48, 0, 1) 0.6s;
+      transform-origin: left;
+      z-index: -1; /* Colocar atrás do botão */
+    }
+
+    .portfolio-experiment .line {
+      position: absolute;
+      background: #f26522;
+      width: 3px; /* Espessura da linha ajustada */
+      height: 100%; /* Altura ajustada para preencher o contêiner */
+      top: 0; /* Alinhar ao topo */
+      left: 0; /* Alinhar à esquerda */
+      transform: scale3d(0, 1, 1); /* Transformação ajustada */
+      transition: transform 0.3s cubic-bezier(1, 0, .65, 1.01); /* Transição ajustada */
+      transform-origin: left; /* Origem da transformação ajustada */
+    }
+
+    .portfolio-experiment a:hover,
+    .portfolio-experiment a:active {
+      .portfolio-experiment .text {
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.6s cubic-bezier(.2, 0, 0, 1) 0.4s;
+      }
+
+      .portfolio-experiment a:after {
+        transform: scale3d(0, 1, 1);
+        right: -3px; /* Posição da linha ajustada */
+        left: -3px; /* Posição da linha ajustada */
+        transform-origin: right;
+        transition: transform 0.2s cubic-bezier(1, 0, .65, 1.01) 0.17s, right 0.2s cubic-bezier(1, 0, .65, 1.01), left 0s 0.3s;
+      }
+
+      .portfolio-experiment .line {
+        transform: scale3d(1, 1, 1);
+      }
+    }
+
+    /* Estilo para o texto abaixo do botão */
+    .description {
+      color: white;
+      font-size: 1.2em;
+      margin-top: 20px; /* Espaço entre o botão e a descrição */
+    }
+
+    /* Estilo para o botão de Ajuda */
+    .btn-ajuda,
+    .portfolio-experiment a {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+      margin-top: 10px; /* Espaço entre a descrição e o botão Ajuda */
+    }
+
+    .btn-ajuda:hover,
+    .portfolio-experiment a:hover {
+      background-color: #45a049;
+    }
+
+    .btn-ajuda:active,
+    .portfolio-experiment a:active {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <a>seivus</a>
+
+  <div class="portfolio-experiment">
+    <a href="boas-vindas.html">
+      <span class="text">Procurar</span>
+      <span class="line -right"></span>
+      <span class="line -top"></span>
+      <span class="line -left"></span>
+      <span class="line -bottom"></span>
+    </a>
+
+    <p class="description">conectando você às melhores empresas sustentáveis</p>
+    <a href="ajuda" class="btn-ajuda">Ajuda</a>
+  </div>
+</body>
+</html>

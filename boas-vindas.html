@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>boas-vindas</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+    body {
+      text-align: center;
+      background-color: #9ACD32;
+      color: #555;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      font-size: 32px;
+      padding-top: 40vh;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .animation-container {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .animation-container div:first-of-type {
+      animation: showup 3s 1;
+    }
+
+    .animation-container div:last-of-type {
+      animation: reveal 3s 1 forwards;
+    }
+
+    .animation-container div:last-of-type span {
+      margin-left: -355px;
+      animation: slidein 3s 1 forwards;
+    }
+
+    @keyframes showup {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slidein {
+      0% { margin-left: -800px; }
+      100% { margin-left: 0px; }
+    }
+
+    @keyframes reveal {
+      0% { opacity: 0; width: 0px; }
+      100% { opacity: 1; width: 355px; }
+    }
+
+    .input-container {
+      margin-top: 20px;
+    }
+
+    .input-container input {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .input-container button {
+      background-color: #FF4500;
+      color: white;
+      border: 2px solid #FFFF00;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .input-container button:hover {
+      background-color: #e03d00;
+    }
+
+    .input-container button:active {
+      background-color: #c63400;
+    }
+
+    p {
+      font-size: 12px;
+      color: #999;
+      margin-top: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div>como</div>
+    <div>
+      <span>quer ser chamado?</span>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <input type="text" placeholder="Seu nome">
+    <button onclick="window.location.href='cidade.html'">Enviar</button>
+  </div>
+
+  <p>Seivus, assim você ajuda o planeta</p>
+</body>
+</html>

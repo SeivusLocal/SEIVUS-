@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escolha uma Cidade</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+    body {
+      text-align: center;
+      background-color: #6B8E23;
+      color: #FFFAF0;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      font-size: 32px;
+      padding-top: 20vh; /* Reduzindo o padding-top para posicionar mais para cima */
+      height: 100vh;
+      overflow: hidden;
+      margin: 0; /* Removendo margem padrão para evitar espaços indesejados */
+    }
+
+    .animation-container {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .animation-container div:first-of-type {
+      animation: showup 3s 1;
+    }
+
+    .animation-container div:last-of-type {
+      animation: reveal 3s 1 forwards;
+    }
+
+    .animation-container div:last-of-type span {
+      margin-left: -355px;
+      animation: slidein 3s 1 forwards;
+    }
+
+    @keyframes showup {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slidein {
+      0% { margin-left: -800px; }
+      100% { margin-left: 0px; }
+    }
+
+    @keyframes reveal {
+      0% { opacity: 0; width: 0px; }
+      100% { opacity: 1; width: 355px; }
+    }
+
+    .button-container {
+      margin-top: 30px; /* Reduzindo a margem superior dos botões */
+    }
+
+    .button-container button {
+      background-color: #FFA500;
+      color: #FFFFFF;
+      border: 2px solid #F0F8FF;
+      padding: 20px 40px;
+      font-size: 24px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 10px;
+    }
+
+    .button-container button:hover {
+      background-color: #e68a00;
+    }
+
+    .button-container button:active {
+      background-color: #bf7300;
+    }
+
+    p {
+      font-size: 12px;
+      color: #999;
+      margin-top: 150px; /* Reduzindo a margem superior do parágrafo */
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div>Escolha uma cidade</div>
+  </div>
+
+  <div class="button-container">
+    <button onclick="window.location.href='porto-alegre.html'">Porto Alegre</button>
+    <button onclick="window.location.href='pelotas.html'">Pelotas</button>
+  </div>
+
+  <p>seivus, significa "Save us" = "Salve-nos"</p>
+</body>
+</html>
