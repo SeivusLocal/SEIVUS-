@@ -17,13 +17,15 @@
 
     body {
       font-family: helvetica, arial, sans-serif;
-      background-color: #2e2e31;
       text-align: center; /* Para centralizar os elementos horizontalmente */
       height: 100vh; /* Definir altura total da tela para posicionar no rodapé */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center; /* Centralizar horizontalmente */
+      background: url('https://i.postimg.cc/d0GWbd25/Design-sem-nome-20240626-163130-0000.png') no-repeat center center fixed;
+      background-size: cover; /* Cobrir toda a tela */
+      color: white; /* Ajustar a cor do texto para contraste */
     }
 
     a {
@@ -59,12 +61,11 @@
 
     a:after {
       border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #ADFF2F #ADFF2F;
-      box-shadow: 25px 25px 25px rgba(46, 46, 49, .8);
+      box-shadow: none; /* Remover a sombra */
     }
 
     /* CSS do segundo exemplo */
     .portfolio-experiment {
-      background: #2d2d2d;
       margin-top: 50px; /* Espaço acima do botão */
       position: relative; /* Adicionado para posicionamento absoluto dos elementos abaixo */
     }
@@ -98,7 +99,7 @@
       left: calc(0.7em * 1.2); /* Espaçamento lateral ajustado */
       right: calc(0.7em * 1.2); /* Espaçamento lateral ajustado */
       height: 3px; /* Tamanho da linha ajustado */
-      background: #f26522;
+      background: none; /* Remover a cor de fundo laranja */
       transition: transform 0.8s cubic-bezier(1, 0, .37, 1) 0.2s, right 0.2s cubic-bezier(.04, .48, 0, 1) 0.6s, left 0.4s cubic-bezier(.04, .48, 0, 1) 0.6s;
       transform-origin: left;
       z-index: -1; /* Colocar atrás do botão */
@@ -106,7 +107,7 @@
 
     .portfolio-experiment .line {
       position: absolute;
-      background: #f26522;
+      background: none; /* Remover a cor de fundo laranja */
       width: 3px; /* Espessura da linha ajustada */
       height: 100%; /* Altura ajustada para preencher o contêiner */
       top: 0; /* Alinhar ao topo */
@@ -171,7 +172,7 @@
 
   <div class="portfolio-experiment">
     <a href="boas-vindas.html">
-      <span class="text">Procurar</span>
+      <span class="text">Começar</span>
       <span class="line -right"></span>
       <span class="line -top"></span>
       <span class="line -left"></span>
